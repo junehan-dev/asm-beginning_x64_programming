@@ -182,10 +182,8 @@ Assembly Listing output
    18 0000001B B83C000000                  mov     RAX, 60
    19 00000020 BF00000000                  mov     RDI, 0
    20 00000025 0F05                        syscall
-   <Linenum>    <8byte-MEM_ADDR>    <MACHINE_INSTRUCTION_IN_HEX>
-
-left side:   generated code in hex Shown
-right side:  original Source Shown
+   left: <Linenum>    <8byte-MEM_ADDR>    <MACHINE_INSTRUCTION_IN_HEX>
+   left: generated code in hex Shown | right:  original Source Shown
 
 - Every output equals in same condition, intel-x86-64, nasm, same source code...
 
