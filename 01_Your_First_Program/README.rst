@@ -152,7 +152,7 @@ Syscall
 Syscall
    Syscall are used to ask the OS to do specific actions.
    We use the Linux system calls for x64 in this book.
-   more detail at, http://blog.rchapman.org/posts/Linux_System_Call_Tab
+   more detail at, http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
 
 - Be aware that 32-bit syscalls differ from 64-bit syscalls.
 
@@ -182,8 +182,26 @@ Assembly Listing output::
       18 0000001B B83C000000                  mov     RAX, 60
       19 00000020 BF00000000                  mov     RDI, 0
       20 00000025 0F05                        syscall
+      <Linenum>    <8byte-MEM_ADDR>    <MACHINE_INSTRUCTION_IN_HEX>
 
    left side:   generated code in hex Shown
    right side:  original Source Shown
+   ----
+   - Every output equals in same condition, intel-x86-64, nasm, same source code...
+   ----
+   **<MEM_ADDR>**
+   - objectfile addr start from 0 means execution allocates to start address.
+   - *0 to different sections.*
+   - **section .bss part has no memory yet in object code.**
+   ----
+   **<INSTRUCTTION_IN_HEX>**
+   - ``mov rax`` is converted to ``B8``
+   - ``mov rdi`` to ``BF``
+   - LINE 12, first instruction: 5bytes of instruction: ``B8 01 00 00 00``
+   - double zero are these for padding and memory alignment.
+   - memory alignment is feature used by assemblers and compilers *to optimize code.*
 
+Assembler mnemonic and symbolic names for mem address are quite a bit easier to remember than hex values.
 
+First Gen language:     machine language(like ``B8`` which programmer used)
+Second Gen language:    Assembly language(lang with easier to remember mnemonics)
