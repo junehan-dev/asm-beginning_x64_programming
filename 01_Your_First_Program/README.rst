@@ -186,15 +186,22 @@ Assembly Listing output
 
    left side:   generated code in hex Shown
    right side:  original Source Shown
+
    ----
+
    - Every output equals in same condition, intel-x86-64, nasm, same source code...
+
    ----
+
    **<MEM_ADDR>**
    - objectfile addr start from 0 means execution allocates to start address.
    - *0 to different sections.*
    - **section .bss part has no memory yet in object code.**
+
    ----
+
    **<INSTRUCTTION_IN_HEX>**
+
    - ``mov rax`` is converted to ``B8``
    - ``mov rdi`` to ``BF``
    - LINE 12, first instruction: 5bytes of instruction: ``B8 01 00 00 00``
