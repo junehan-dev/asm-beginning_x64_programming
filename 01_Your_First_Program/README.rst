@@ -156,7 +156,7 @@ Syscall
 
 - Be aware that 32-bit syscalls differ from 64-bit syscalls.
 
-Assembly Listing output::
+Assembly Listing output
 
    .. code-block:: asm
 
