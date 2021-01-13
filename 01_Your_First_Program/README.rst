@@ -158,49 +158,44 @@ Syscall
 
 Assembly Listing output
 
-   .. code-block:: asm
+.. code-block:: asm
 
-      1                                  section .data
-      2                                      SYS_WRITE       EQU 1
-      3                                      STDOUT_FILENO   EQU 1
-      4 00000000 68656C6C6F2C20776F-         msg             DB  "hello, world", 0
-      4 00000009 726C6400           
-      5                                      msg_len         EQU $-msg
-      6                                  
-      7                                  section .bss
-      8                                  section .text
-      9                                      global main
-      10                                  
-      11                                  main:
-      12 00000000 B801000000                  mov     RAX, SYS_WRITE
-      13 00000005 BF01000000                  mov     RDI, STDOUT_FILENO
-      14 0000000A 48BE-                       mov     RSI, msg
-      14 0000000C [0000000000000000] 
-      15 00000014 BA0C000000                  mov     RDX, 12
-      16 00000019 0F05                        syscall    
-      17                                  
-      18 0000001B B83C000000                  mov     RAX, 60
-      19 00000020 BF00000000                  mov     RDI, 0
-      20 00000025 0F05                        syscall
-      <Linenum>    <8byte-MEM_ADDR>    <MACHINE_INSTRUCTION_IN_HEX>
+   1                                  section .data
+   2                                      SYS_WRITE       EQU 1
+   3                                      STDOUT_FILENO   EQU 1
+   4 00000000 68656C6C6F2C20776F-         msg             DB  "hello, world", 0
+   4 00000009 726C6400           
+   5                                      msg_len         EQU $-msg
+   6                                  
+   7                                  section .bss
+   8                                  section .text
+   9                                      global main
+   10                                  
+   11                                  main:
+   12 00000000 B801000000                  mov     RAX, SYS_WRITE
+   13 00000005 BF01000000                  mov     RDI, STDOUT_FILENO
+   14 0000000A 48BE-                       mov     RSI, msg
+   14 0000000C [0000000000000000] 
+   15 00000014 BA0C000000                  mov     RDX, 12
+   16 00000019 0F05                        syscall    
+   17                                  
+   18 0000001B B83C000000                  mov     RAX, 60
+   19 00000020 BF00000000                  mov     RDI, 0
+   20 00000025 0F05                        syscall
+   <Linenum>    <8byte-MEM_ADDR>    <MACHINE_INSTRUCTION_IN_HEX>
 
-   left side:   generated code in hex Shown
-   right side:  original Source Shown
+left side:   generated code in hex Shown
+right side:  original Source Shown
 
-   ----
+- Every output equals in same condition, intel-x86-64, nasm, same source code...
 
-   - Every output equals in same condition, intel-x86-64, nasm, same source code...
+**<MEM_ADDR>**
 
-   ----
-
-   **<MEM_ADDR>**
    - objectfile addr start from 0 means execution allocates to start address.
    - *0 to different sections.*
    - **section .bss part has no memory yet in object code.**
 
-   ----
-
-   **<INSTRUCTTION_IN_HEX>**
+**<INSTRUCTTION_IN_HEX>**
 
    - ``mov rax`` is converted to ``B8``
    - ``mov rdi`` to ``BF``
