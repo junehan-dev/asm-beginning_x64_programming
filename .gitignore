@@ -53,4 +53,5 @@ dkms.conf
 
 # custom files
 
+Makefile
 ./Makefile
