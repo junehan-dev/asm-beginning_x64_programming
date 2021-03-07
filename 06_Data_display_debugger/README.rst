@@ -1,4 +1,4 @@
-0. Data Display Debugger
+06. Data Display Debugger
 =========================
 
 Data Display Debbugger (DDD) is debugging tool with
