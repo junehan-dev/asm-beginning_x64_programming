@@ -126,7 +126,10 @@ Summary
    - Executable code is at lower side of memory. (readelf)
    - Top of Executable code
       0. Entry point	: 0x401020
-      1. section .data	: 0x404018
-      #. section .bss	: 0x40403b
-      #. 
+      1. Main point		: 0x401110
+      2. section .data	: 0x404018
+      3. section .bss	: 0x40403b
+   - Stack(RSP) from High memory, Executable from lower Memory.
+   - Stack between additional after data(bss,..) section is called heap.
+
 
