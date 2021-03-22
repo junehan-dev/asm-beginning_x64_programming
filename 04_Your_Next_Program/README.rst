@@ -27,16 +27,16 @@ extern_printf
 Build command:
    ``gcc -o run.out src/extern_printf.asm -l src/extern_printf.lst``
 
-Build procedure::
-
+Build procedure:
    1. Object file compiled with nasm. (assemble the asm code file) to binary object.
    #. compile with gcc option ``-no-pie``, other wise ``printf`` causes an error.
 
-``-no-pie``
-   Don't produce a dynamically linked position independent executable.
+Build options:
+   ``-no-pie``
+      Don't produce a dynamically linked position independent executable.
 
-``pie``
-   Position independent executable to make hacker safe.
+   ``pie``
+      Position independent executable to make hacker safe.
 
 .. code-block:: asm
 
