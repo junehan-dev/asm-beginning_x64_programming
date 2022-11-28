@@ -1,20 +1,21 @@
-section .data
-    SYS_WRITE       EQU 1
-    STDOUT_FILENO   EQU 1
-    msg             DB  "hello, world", 0
-    msg_len         EQU $-msg
+SECTION .data
+	SYS_WRITE	EQU	1
+	STDOUT_FILENO	EQU	1
+	msg	DB	"hello, world", 0
+	msg_len	EQU $-msg
 
-section .bss
-section .text
-    global main
+SECTION .bss
+SECTION .text
+	global main
 
 main:
-    mov     RAX, SYS_WRITE
-    mov     RDI, STDOUT_FILENO
-    mov     RSI, msg
-    mov     RDX, 12
-    syscall    
+	MOV	RAX, SYS_WRITE
+	MOV	RDI, STDOUT_FILENO
+	MOV	RSI, msg
 
-    mov     RAX, 60
-    mov     RDI, 0
-    syscall
+	MOV	RDX, msg_len
+	SYSCALL
+
+	MOV	RAX, 60
+	MOV	RDI, 0
+	SYSCALL

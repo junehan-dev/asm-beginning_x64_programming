@@ -203,5 +203,5 @@ Assembly Listing output
 
 Assembler mnemonic and symbolic names for mem address are quite a bit easier to remember than hex values.
 
-First Gen language:     machine language(like ``B8`` which programmer used)
-Second Gen language:    Assembly language(lang with easier to remember mnemonics)
+- First Gen language:     machine language(like ``B8`` which programmer used)
+- Second Gen language:    Assembly language(lang with easier to remember mnemonics)
