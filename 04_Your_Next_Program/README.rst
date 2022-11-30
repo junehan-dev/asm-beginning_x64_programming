@@ -1,11 +1,11 @@
 4. Your Next Program: Alive and Kicking!
 ========================================
 
-What to look?::
+What to look?
 
-   - how to obtain the length of a string variable.
-   - how to print integer and floating-point values using ``printf`` .
-   - Expand your knowledge of GDB commands.
+   - 문자열의 길이를 얻는 방법.
+   - ``printf``\를 사용하여, 숫자와 부동소수점을 출력하는 방법.
+   - GDB명령어에 대한 추가적인 이해.
 
 Printing
 --------

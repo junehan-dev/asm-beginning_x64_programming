@@ -1,7 +1,7 @@
 2. Binary Numbers, Hexadecimal Numbers and Registers
 ====================================================
 
-*omits the content of B_H_Numbers, those i aldy know*
+*omits the content of B_H_Numbers, those i already know*
 
 A Short Course on Registers
 ---------------------------
@@ -14,12 +14,28 @@ Register
 16 of General-Purpose Registers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Content of those registers::
+- Scratch registers(임의 사용 가능)
 
-   - ``rax~rdx``
-   - ``rsi``, ``rdi``
-   - ``rbp`` , ``rsp``
-   - ``r8 ~ r15``
+   1. ``rax``
+      - SYSCALL시에 읽어야할 명령어를 저장
+      - 함수 실행시 종료 값이 저장
+   #. ``rcx``
+      - 일반적인 용도이나, 일부 명령에서 카운터로 쓰여질 수 있다.
+   #. ``rdx``
+   #. ``rdi``
+      -일반적인 용도이나, 함수 매개변수1 레지스터로 사용될 수 있다.
+   #. ``rsi``
+      -일반적인 용도이나, 함수 매개변수2 레지스터로 사용될 수 있다.
+   #. ``r8 ~ r11``
+
+- Preserved registers(사용 후 본래의 값으로 돌려놓아야 함)
+
+   1. ``rbx``
+   #. ``rbp``
+         - Stack pointer
+   #. ``rsp``
+         - Stack base pointer
+   #. ``r12 ~ r15``
 
 Instruction Pointer Register(rip)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

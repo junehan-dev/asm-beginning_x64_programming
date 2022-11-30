@@ -16,6 +16,7 @@ main:
 	mov		rbx, [number2]
 	cmp 	rax, rbx
 	jge		greater
+lower:
 	mov		rdi, fmt2
 	mov		rax, 0		; no xmm involved
 	call	printf
