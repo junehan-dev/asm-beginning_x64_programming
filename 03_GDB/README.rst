@@ -88,11 +88,20 @@ GDB commands
 - ``disable breakpoint <number>``
 - ``enable breakpoint <number>``
 - ``delete breakpoint <number>``
-- ``continue``: countinue execution till next breakpoint
-- ``step``:     step into cur line, jump into the called function.
-- ``next``:     step over cur line, stop at next line
-- ``print``:    print the value of a variable, register and so on.
+- ``continue``\: countinue execution till next breakpoint
+- ``step``\: step into cur line, jump into the called function.
+- ``next``\: step over cur line, stop at next line
+- ``disassemble [LABEL]``\: analyze
+- ``print [REGISTER]``\: print the value of a variable, register and so on.
 
-   - ``print $rax``: print value of register in decimal
-   - ``p/t $rax``: print in bin
-   - ``p/x $rax``: print in hex
+   - ``print $rax``\: print value of register in decimal
+   - ``p/t $rax``\: print in bin
+   - ``p/x $rax``\: print in hex
+
+- ``x/<COUNT>[T] [ADDRESS]``\: examine Type T for counts in address.
+
+   - ``x/s 0x??????``\: examine value as string on 0x000000
+   - ``x/c 0x??????``\: examine value as character on 0x000000
+   - ``x/13c 0x??????``\: examine 13 character from 0x000000
+   - ``x/d 0x??????``\: examine value as decimal on 0x000000
+   - ``x/x 0x??????``\: examine value as hex on 0x000000
